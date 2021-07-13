@@ -40,7 +40,7 @@ function Header() {
               {session ? `Hello ${session.user.name} Sign Out` : `Sign In`}
             </small>
           </a>
-          <a className="mr-2" href="#">
+          <a onClick={() => router.push('/orders')} className="mr-2" href="#">
             Orders
           </a>
           <span className="text-lg mr-1">{items.length}</span>

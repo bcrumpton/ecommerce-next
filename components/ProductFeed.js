@@ -20,14 +20,7 @@ function ProductFeed({ products }) {
           );
         })}
 
-      <Image
-        className="md:col-span-full"
-        width={1030}
-        height={300}
-        layout="responsive"
-        src="/advert.jpg"
-        alt=""
-      />
+      <img className="md:col-span-full" src="/advert.jpg" alt="" />
 
       <div className="md:col-span-2">
         {products
