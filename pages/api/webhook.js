@@ -2,10 +2,14 @@ import { buffer } from 'micro';
 import * as admin from 'firebase-admin';
 import { session } from 'next-auth/client';
 
-const serviceAccount = require('../../permissions.json');
-
 const app = !admin.apps.length
-  ? admin.initializeApp({ credential: admin.credential.cert(serviceAccount) })
+  ? admin.initializeApp({
+      credential: admin.credential.cert({
+        client_email: process.env.CLIENT_EMAIL,
+        private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
+        project_id: 'two-a264b',
+      }),
+    })
   : admin.app();
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
