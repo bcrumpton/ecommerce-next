@@ -33,7 +33,7 @@ function Order({ id, amount, amountShipping, items, timestamp, images }) {
           <div key={idx}>
             <Image
               className="h-20 object-contain sm:h-32"
-              alt=""
+              alt="Product images"
               src={image}
               width={200}
               height={150}
