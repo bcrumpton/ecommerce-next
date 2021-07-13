@@ -20,7 +20,15 @@ function ProductFeed({ products }) {
           );
         })}
 
-      <img className="md:col-span-full" src="/advert.jpg" alt="" />
+      <div className="md:col-span-full">
+        <Image
+          src="/advert.jpg"
+          width={1500}
+          height={300}
+          objectFit="contain"
+          alt="Advertisement"
+        />
+      </div>
 
       <div className="md:col-span-2">
         {products

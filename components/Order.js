@@ -1,5 +1,6 @@
 import moment from 'moment';
 import Currency from 'react-currency-formatter';
+import Image from 'next/image';
 
 function Order({ id, amount, amountShipping, items, timestamp, images }) {
   return (
@@ -27,12 +28,19 @@ function Order({ id, amount, amountShipping, items, timestamp, images }) {
         </p>
       </div>
 
-      <div className="p-5 sm:p-10">
-        <div className="flex space-x-6 overflow-x-auto">
-          {images.map((image) => (
-            <img className="h-20 object-contain sm:h-32" src={image} alt="" />
-          ))}
-        </div>
+      <div className="p-5 sm:p-10 flex space-x-6">
+        {images.map((image, idx) => (
+          <div key={idx}>
+            <Image
+              className="h-20 object-contain sm:h-32"
+              alt=""
+              src={image}
+              width={200}
+              height={150}
+              objectFit="contain"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
