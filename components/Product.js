@@ -21,7 +21,7 @@ function Product({ id, title, price, description, image, category }) {
   };
 
   return (
-    <div key={id} className="bg-white p-10 flex flex-col">
+    <div key={id} className="bg-white rounded-xl shadow-md p-10 flex flex-col">
       <Image
         className="mx-auto"
         src={image}

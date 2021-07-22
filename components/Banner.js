@@ -1,55 +1,53 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Image from 'next/image';
+import CarouselImage from './CarouselImage';
 
 function Banner() {
+  const bannerItems = [
+    {
+      brand: 'Hoka One One',
+      product: 'Clifton 8',
+      img: '/hoka-clifton.png',
+      imgAlt: 'Hoka One One - Clifton 8',
+    },
+    {
+      brand: 'Hoka One One',
+      product: 'Arahi 5',
+      img: '/hoka-arahi.png',
+      imgAlt: 'Hoka One One - Arahi 5',
+    },
+    {
+      brand: 'Hoka One One',
+      product: 'Rincon 3',
+      img: '/hoka-rincon.png',
+      imgAlt: 'Hoka One One - Rincon 3',
+    },
+  ];
   return (
     <div className="relative">
-      <div className="absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20" />
+      <div className="banner relative top-0 right-0 left-0 bottom-0 w-full z-20" />
       <Carousel
-        autoPlay
+        style={{ height: '475px' }}
+        className="absolute w-full top-0 bottom-0 right-0 left-0 z-20"
+        // autoPlay
         infiniteLoop
         showStatus={false}
         showIndicators={false}
         showThumbs={false}
         interval={5000}
       >
-        <div className="w-full" style={{ height: '515px' }}>
-          <Image
-            layout="fill"
-            objectFit="contain"
-            loading="lazy"
-            src="/luxury.jpg"
-            alt="Luxury gifts"
-          />
-        </div>
-        <div className="w-full" style={{ height: '515px' }}>
-          <Image
-            layout="fill"
-            objectFit="contain"
-            loading="lazy"
-            src="/audible.jpg"
-            alt="Audible advertisement"
-          />
-        </div>
-        <div className="w-full" style={{ height: '515px' }}>
-          <Image
-            layout="fill"
-            objectFit="contain"
-            loading="lazy"
-            src="/primevideo.jpg"
-            alt="Amazon Prime Video"
-          />
-        </div>
-        <div className="w-full" style={{ height: '515px' }}>
-          <Image
-            layout="fill"
-            objectFit="contain"
-            loading="lazy"
-            src="/amazonmusic.jpg"
-            alt="Amazon Prime Music"
-          />
-        </div>
+        {bannerItems.map(({ brand, product, img, imgAlt }, idx) => {
+          return (
+            <CarouselImage
+              key={idx}
+              brand={brand}
+              product={product}
+              img={img}
+              imgAlt={imgAlt}
+            />
+          );
+        })}
       </Carousel>
     </div>
   );

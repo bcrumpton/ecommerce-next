@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 function Success() {
   const router = useRouter();
   return (
-    <div className="bg-gray-100">
+    <div className="bg-ghost-purple h-screen">
       <Head>
         <title>Success</title>
         <meta

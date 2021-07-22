@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+$work: 'Work Sans', sans-serif;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $work;
 }
 
 a {
@@ -19,6 +22,17 @@ a {
   box-sizing: border-box;
 }
 
+.banner {
+  background: rgb(96, 60, 182);
+  background: linear-gradient(
+    135deg,
+    rgba(96, 60, 182, 1) 0%,
+    rgba(238, 233, 248, 1) 100%
+  );
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  height: 30rem;
+}
+
 .button {
-  @apply text-xs md:text-sm rounded-md bg-gradient-to-b from-yellow-200 to-yellow-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500;
+  @apply text-xs text-white font-bold transition-all md:text-sm rounded-md bg-middle-purple hover:bg-deep-purple px-4 py-2;
 }
